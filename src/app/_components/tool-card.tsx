@@ -3,21 +3,23 @@ import Image from 'next/image';
 import { Box, Button, Typography } from '@mui/material';
 
 type CardProps = {
-    cardImage: any;
-    title: string;
+    focus:boolean;
+    cardImage:any;
+    title:string;
     description:string;
     buttonRedirect:string;
 }
 
-export function ToolCard({cardImage, title, description, buttonRedirect}: CardProps){
+export function ToolCard({focus, cardImage, title, description, buttonRedirect}: CardProps){
 
     return(
         <div>
             <Box sx={{
-                width:'30vw',
+                width:'60vw',
                 backgroundColor:'primary.light',
                 borderRadius:'2rem',
-                m:2
+                m:2,
+                filter:focus? 'none':'blur(0.2rem)'
             }}>
                 <Typography 
                     variant='h4'
@@ -32,7 +34,7 @@ export function ToolCard({cardImage, title, description, buttonRedirect}: CardPr
                 <Image src={cardImage} alt='tool' style={{width:'100%', height:'auto'}}/>
                 <Box sx={{
                     display:'flex',
-                    height: '10rem',
+                    height: '8rem',
                     flexDirection:'column',
                     backgroundColor:'primary.dark',
                     borderRadius:'0 0 1.2rem 1.2rem',
