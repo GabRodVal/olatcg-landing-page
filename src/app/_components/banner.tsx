@@ -95,7 +95,8 @@ export function Banner(){
                 quality={100}
                 style={{ 
                     width: 'auto',
-                    height: '30vh',
+                    height: '20rem',
+                    marginRight: '4rem'
                  }}
                 priority
             />

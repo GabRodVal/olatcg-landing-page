@@ -15,17 +15,20 @@ export function FeaturedTools(){
                 display:'flex',
                 flexDirection:'column',
                 position:'relative',
+                '@media (max-width: 768px)' : {
+                    p:0
+                }
                 //alignItems:'center'
             }}>
                 <Typography variant='h4' sx={{
-                    width:'20%',
                     color:'primary.contrastText',
                     backgroundColor:'primary.dark',
                     borderRadius:'1rem',
                     textAlign:'center',
                     fontWeight:300,
                     p:2,
-                    m:'auto'
+                    m:'auto',
+                    mb:2
                 }}>
                     Funcionalidades
                 </Typography>

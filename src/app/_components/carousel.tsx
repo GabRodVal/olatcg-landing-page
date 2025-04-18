@@ -3,9 +3,10 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
-import { ArrowBackIos, ArrowForwardIos, Calculate} from '@mui/icons-material';
-import { Box, Button, IconButton, Typography } from '@mui/material';
+import { EmblaCarouselType } from 'embla-carousel'
+import Autoplay from 'embla-carousel-autoplay'
+import { ArrowBackIos, ArrowForwardIos} from '@mui/icons-material';
+import { Box, Button} from '@mui/material';
 import { ToolCard } from './tool-card';
 import scAlign from '../../../public/sc_align.png'
 import scHomol from '../../../public/sc_homol.png'
@@ -46,22 +47,22 @@ export function Carousel(){
         breakpoints:{
             "(max-width): 768px": { slidesToScroll: 1 }
         }
-    })
+    },[
+        Autoplay({
+            playOnInit: true,
+            delay:4000,
+        })
+    ]
+    )
 
     const [slideFocus, setSlideFocus] = useState([true, false, false])
 
     const adaptSlideFocus = useCallback((emblaApi:EmblaCarouselType) => {
-        console.log("YES IN VIEW ->",emblaApi.slidesInView())
-        console.log("NOT IN VIEW ->",emblaApi.slidesNotInView())
-
-
         let offSlides = emblaApi.slidesNotInView()
 
         setTimeout(function(){
             setSlideFocus([!offSlides.includes(0), !offSlides.includes(1), !offSlides.includes(2)]);
         }, 200)
-
-        console.log("slidefocus", slideFocus)
     }, [])
 
     useEffect(() =>{
@@ -76,7 +77,7 @@ export function Carousel(){
             style={{
                 overflow:'hidden',
                 position:'relative',
-                //height:'80vh',
+                height:'auto',
             }} 
             ref={emblaRef}
         >
@@ -94,12 +95,14 @@ export function Carousel(){
                 ))}
             </div>
             <Box sx={{
-                position:'absolute',
-                display:'flex',
+                position:'relative',
+                display:'none',
                 flexDirection:'row',
-                height:0,
-                top:'30vh',
-                zIndex:2
+                bottom:'53%',
+                zIndex:2,
+                '@media (max-width: 768px)' : {
+                    top:'13vh'
+                }
             }}>
                 <Button
                     startIcon={<ArrowBackIos sx={{width:'3rem', height:'3rem'}}/>}
@@ -114,11 +117,21 @@ export function Carousel(){
                         borderRadius:'100%',
                         textAlign:'center',
                         pl:4,
-                        left:'7.5vw'
+                        left:'7.5vw',
+                        '@media (max-width: 768px)' : {
+                            opacity:'80%',
+                            backgroundColor:'#00000000',
+                            width:'3rem',
+                            height:'3rem',
+                            left:'calc(7.5vw - 2rem)'
+                        }
                     }}>
                 </Button> 
             <Button
-                    startIcon={<ArrowForwardIos sx={{width:'3rem', height:'3rem'}}/>}
+                    startIcon={<ArrowForwardIos sx={{
+                        width:'3rem',
+                        height:'3rem',
+                    }}/>}
                     onClick={function(){
                         emblaApi?.scrollNext()
                     }}
@@ -130,7 +143,14 @@ export function Carousel(){
                         borderRadius:'100%',
                         textAlign:'center',
                         pl:3,
-                        left:'calc(90vw - 8rem)'
+                        left:'calc(90vw - 8rem)',
+                        '@media (max-width: 768px)' : {
+                            opacity:'80%',
+                            backgroundColor:'#00000000',
+                            width:'3rem',
+                            height:'3rem',
+                            left:'calc(90vw - 5rem)',
+                        }
                     }}>
                 </Button> 
             </Box>

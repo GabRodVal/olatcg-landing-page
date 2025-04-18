@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import Image from 'next/image';
-import { Box, Modal} from '@mui/material';
+import { Box, Modal, Typography} from '@mui/material';
 
 type imageModalProps = {
-    cardImage:any
+    cardImage:any;
+    title:string;
+    description:string;
 }
 
-export function ImageModal({cardImage}:imageModalProps){
+export function ImageModal({cardImage, title, description}:imageModalProps){
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -38,21 +40,64 @@ export function ImageModal({cardImage}:imageModalProps){
                     width: '100vw',
                     height: '100vh',
                     backgroundColor:'rgba(0, 0, 0, 0.33)',
-                    border: '2px solid #000',
-                    boxShadow: 24,
                     p: 4,
                 }}
                 onClick={handleClose}
                 >
-                    <Image 
-                        src={cardImage} 
-                        alt='tool'
-                        onClick={handleOpen}
-                        style={{
+                    <Box sx={{
+                        display:'flex',
+                        flexDirection:'column',
+                        alignItems:'center',
+                        justifyContent:'center',
+                        height:'100%'
+                    }}>
+                        <Image 
+                            src={cardImage} 
+                            alt='tool'
+                            onClick={handleOpen}
+                            style={{
+                                width:'100%',
+                                maxHeight:'75%',
+                                height:'auto',
+                                objectFit:'contain'
+                            }}
+                        />
+                        <Box sx={{
                             width:'100%',
-                            height:'auto', 
-                        }}
-                    />
+                            p:2
+                            }}>
+                            <Typography 
+                                variant='h4'
+                                sx={{
+                                    color:'primary.contrastText',
+                                    fontWeight: 500,
+                                    '@media (max-width: 768px)' : {
+                                        fontSize: '1.6rem',
+                                        p:0
+                                    },
+                                }}
+                            >
+                                {title}
+                            </Typography>
+                            <Typography
+                                variant='subtitle1'
+                                sx={{
+                                    color:'primary.contrastText',
+                                    fontSize:'1.1rem',
+                                    fontWeight: 200,
+                                    textAlign:'justify',
+                                    wordWrap:'break-word', 
+                                    hyphens:'auto',
+                                    '@media (max-width: 768px)' : {
+                                        fontSize: '0.8rem',
+                                        p:0
+                                    },
+                                }}
+                            >
+                                {description}
+                            </Typography>
+                        </Box>
+                    </Box>
                 </Box>
             </Modal>
         </div>
