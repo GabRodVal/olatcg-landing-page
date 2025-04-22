@@ -4,6 +4,8 @@ import { Banner } from "./_components/banner";
 import { DescriptionBody } from "./_components/description-body";
 import { FeaturedTools } from "./_components/featured-tools";
 import { Collab } from "./_components/collab";
+import { Learn } from './_components/learn';
+import { Experiment } from './_components/experiment';
 
 
 
@@ -21,6 +23,8 @@ export default function Home() {
           <Banner/>
         </Box>
         <DescriptionBody/>
+        <Learn/>
+        <Experiment/>
         <FeaturedTools/>
         <Collab/>
       </Paper>

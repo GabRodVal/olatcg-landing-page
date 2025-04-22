@@ -1,9 +1,6 @@
-import * as React from 'react';
 import { Box, Button, Paper, Typography } from '@mui/material';
 import Image from 'next/image';
 import Logo from '../../../public/logo.png'
-
-
 
 export function DescriptionBody(){
 

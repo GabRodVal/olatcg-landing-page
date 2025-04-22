@@ -11,7 +11,6 @@ export function FeaturedTools(){
     return(
         <div>
             <Box sx={{
-                p:2,
                 display:'flex',
                 flexDirection:'column',
                 position:'relative',

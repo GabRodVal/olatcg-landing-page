@@ -72,6 +72,8 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                             color:'primary.contrastText',
                             fontSize:'1.1rem',
                             fontWeight: 200,
+                            p:1,
+                            pt:0,
                             '@media (max-width: 768px)' : {
                                 fontSize: '0.8rem',
                                 p:0
@@ -85,7 +87,7 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                         href={buttonRedirect}
                         sx={{
                             float:'right',
-                            width: '25%',
+                            width: '20%',
                             mt:'auto',
                             ml:'auto',
                             '@media (max-width: 768px)' : {
