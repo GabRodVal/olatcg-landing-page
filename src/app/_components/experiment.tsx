@@ -1,26 +1,42 @@
-import { Box, Button, Paper, Stepper, Step, StepConnector, StepLabel, StepContent, Typography } from '@mui/material';
-import { Grading, FormatAlignCenter, Mode } from '@mui/icons-material';
+'use client'
 
+import { Box, Button, Paper, Stepper, Step, StepConnector, StepIcon, StepLabel, StepContent, Typography } from '@mui/material';
+import { Grading, Biotech, Mode } from '@mui/icons-material';
 
 const steps = [
-    'Crie um experimento',
-    'Monte sua análise de Alinhamento ou Busca Homóloga',
-    'Veja os resultados detalhados de sua análise'
+    {
+        title:'Crie um experimento',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon: Biotech,
+    },
+    {
+        title:'Monte sua análise',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon: Mode,
+
+    },
+    {
+        title:'Cheque os resultados',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon: Grading,
+
+    },
 ]
 
-const icons = [
-    Mode,
-    Grading,
-    FormatAlignCenter,
-]
-
-const CustomConnector = () => {
+const CustomConnector = ({ index, active, completed, disabled}:any) => {
     return <StepConnector 
     sx={{
-        top:22,
+        top:32,
         border: 'solid',
         borderColor:'secondary.main',
-        borderWidth:'0.4rem',
+        borderWidth:'0.0rem',
+        height:'0.6rem',
+        backgroundImage:'linear-gradient(to top, #37ecba 0%, #72afd3 100%)',
+        ml:'1.15rem',
+        mr:'1.15rem',
+        '*':{
+            opacity:0
+        }
     }}/>
 }
 
@@ -33,10 +49,10 @@ export function Experiment(){
                 justifyContent:'center',
                 alignItems:'center',
                 p:4,
-                width:'100%',
+                maxWidth:'90%',
                 m:'auto',
                 mb:4,
-                backgroundColor:'secondary.light'
+                //backgroundColor:'secondary.light'
             }}>
             <Typography
                 variant='h4'
@@ -45,35 +61,38 @@ export function Experiment(){
                     fontWeight:500,
                 }}
                 gutterBottom>
-                Realize Análises Rapidamente
+                Realize Análises de Forma Simples
             </Typography>
             <Box 
                 sx={{
-                    m:4
+                    display:'flex',
+                    m:4,
+                    minHeight:'33vh',
+                    alignItems:'center'
                 }}
             >
                 <Stepper 
-                    activeStep={2}
                     alternativeLabel
                     sx={{
-                        width:'80vw',
+                        //width:'80vw',
                     }}
                     connector={
                         <CustomConnector/>
                     }
                 >
-                    {steps.map((label, index) => (
+                    {steps.map((item, index) => (
                         <Step>
-                            <StepLabel 
+                            <StepLabel
                                 slots={{
-                                    stepIcon:icons[index],
+                                    stepIcon: item.icon
                                 }}
                                 slotProps={{
                                     stepIcon:{
                                         sx:{
-                                            fontSize:'3.6rem',
+                                            fontSize:'4.8rem',
                                             borderRadius:'100%',
                                             backgroundColor: 'secondary.main',
+                                            backgroundImage:'linear-gradient(to top, #37ecba 0%, #72afd3 100%)',
                                             color:'primary.contrastText',
                                             p:1,
                                         }
@@ -81,12 +100,16 @@ export function Experiment(){
                                     
                                 }}
                             >
-                                <Box>
-                                    <Typography variant='body1' sx={{fontWeight:500}}>
-                                        {label} 
+                                <Box sx={{
+                                    display:'flex',
+                                    flexDirection:'column',
+                                    alignItems:'center',
+                                    }}>
+                                    <Typography variant='body1' sx={{fontWeight:500, color:'secondary.contrastText'}}>
+                                        {item.title} 
                                     </Typography>
-                                    <Typography variant='body2' sx={{color:'grey'}}>
-                                        {label} 
+                                    <Typography variant='body2' sx={{color:'warning.contrastText'}}>
+                                        {item.description}
                                     </Typography>
                                 </Box>
                             </StepLabel>

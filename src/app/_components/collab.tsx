@@ -10,13 +10,13 @@ export function Collab(){
         <div>
             <Box sx={{
                 color:'primary.contrastText',
-                backgroundColor:'primary.dark',
+                //backgroundColor:'secondary.dark',
                 textAlign:'center',
                 '@media (max-width: 768px)':{
                     width:'100%'
                 }
             }}>
-                <Typography variant='h4' sx={{fontWeight:300, p:2}}>O OLATCG é uma colaboração entre</Typography>
+                <Typography variant='h4' sx={{fontWeight:400, p:2, mt:4}}>O OLATCG é uma colaboração entre</Typography>
                 <Box sx={{
                     display: 'flex',
                     justifyContent:'center',
@@ -34,7 +34,7 @@ export function Collab(){
                             mr:'1rem'
                         }
                         }}>
-                        <Image alt='CEFET RJ' title='Centro Federal de Educa&ccedil;&atilde;o Tecnol&oacute;gica (CEFET)' src={cefetLogo} style={{height: '8rem', width:'auto'}}/>
+                        <Image alt='CEFET RJ' title='Centro Federal de Educa&ccedil;&atilde;o Tecnol&oacute;gica (CEFET)' src={cefetLogo} style={{height: '6rem', width:'auto'}}/>
                     </Box>
                     <Box sx={{
                         backgroundColor:'primary.light',
@@ -47,7 +47,7 @@ export function Collab(){
                             ml:'1rem'
                         }
                         }}>
-                        <Image alt='Funda&ccedil;&atilde;o Osorio' title='Funda&ccedil;&atilde;o Osorio' src={fundOsorioLogo} style={{height: '8rem', width:'auto' }}/>
+                        <Image alt='Funda&ccedil;&atilde;o Osorio' title='Funda&ccedil;&atilde;o Osorio' src={fundOsorioLogo} style={{height: '6rem', width:'auto' }}/>
                     </Box>
                 </Box>
             </Box>

@@ -6,6 +6,7 @@ import { FeaturedTools } from "./_components/featured-tools";
 import { Collab } from "./_components/collab";
 import { Learn } from './_components/learn';
 import { Experiment } from './_components/experiment';
+import { OurTools } from './_components/our-tools';
 
 
 
@@ -13,7 +14,12 @@ export default function Home() {
   return (
     <main>
       <Paper sx={{
-        backgroundColor:'primary.main'
+        display:'flex',
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        backgroundColor:'primary.dark',
+        backgroundImage: 'linear-gradient(to top right, #43e97b 0%, #38f9d7 100%);'
       }}>
         <Box sx={{
           '@media (max-width: 768px)' : {
@@ -22,10 +28,13 @@ export default function Home() {
         }}>
           <Banner/>
         </Box>
-        <DescriptionBody/>
-        <Learn/>
-        <Experiment/>
-        <FeaturedTools/>
+        <Paper sx={{backgroundColor:'primary.light', width:'88%'}}>
+          <DescriptionBody/>
+          <Experiment/>
+          <Learn/>
+          <OurTools/>
+          <FeaturedTools/>
+        </Paper>
         <Collab/>
       </Paper>
     </main>

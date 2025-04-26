@@ -82,7 +82,7 @@ export function Banner(){
                 display:'flex',
                 flexDirection:'row',
                 p:4,
-                backgroundColor:'primary.light',
+                //backgroundColor:'primary.light',
                 width:'100%',
                 justifyContent:'center',
                 textAlign:'center',
@@ -96,7 +96,6 @@ export function Banner(){
                 style={{ 
                     width: 'auto',
                     height: '20rem',
-                    marginRight: '4rem'
                  }}
                 priority
             />
@@ -104,7 +103,7 @@ export function Banner(){
             <Box sx={{
                     display:'flex',
                     flexDirection:'column',
-                    width:'40%',
+                    width:'50%',
                     justifyContent:'center',
                     textAlign:'center',
                     alignItems:'center',
@@ -126,7 +125,7 @@ export function Banner(){
                             ":hover":{
                                 cursor:'pointer',
                                 color:'warning.main',
-                                textShadow: `4px 3px 0px ${theme.palette.secondary.main}`,
+                                textShadow: `4px 3px 0px ${theme.palette.primary.dark}`,
                                 transition: '300ms'
                             }
                         }}
@@ -143,7 +142,7 @@ export function Banner(){
                             ":hover":{
                                 cursor:'pointer',
                                 color:'info.main',
-                                textShadow: `4px 3px 0px ${theme.palette.secondary.main}`,
+                                textShadow: `4px 3px 0px ${theme.palette.primary.dark}`,
                                 transition: '300ms'
                             }
                         }}
@@ -160,7 +159,7 @@ export function Banner(){
                             ":hover":{
                                 cursor:'pointer',
                                 color:'success.main',
-                                textShadow: `4px 3px 0px ${theme.palette.secondary.main}`,
+                                textShadow: `4px 3px 0px ${theme.palette.primary.dark}`,
                                 transition: '300ms'
                             }
                         }}
@@ -177,7 +176,7 @@ export function Banner(){
                             ":hover":{
                                 cursor:'pointer',
                                 color:'error.main',
-                                textShadow: `4px 3px 0px ${theme.palette.secondary.main}`,
+                                textShadow: `4px 3px 0px ${theme.palette.primary.dark}`,
                                 transition: '300ms'
                             }
                         }}

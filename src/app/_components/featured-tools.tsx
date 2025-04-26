@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import { Carousel } from './carousel';
 
 
@@ -14,27 +14,28 @@ export function FeaturedTools(){
                 display:'flex',
                 flexDirection:'column',
                 position:'relative',
+                //backgroundColor:'primary.light',
+                //filter:'blur(0.2rem)',
+                pt:2,
+                pb:1,
                 '@media (max-width: 768px)' : {
                     p:0
                 }
                 //alignItems:'center'
             }}>
                 <Typography variant='h4' sx={{
-                    color:'primary.contrastText',
-                    backgroundColor:'primary.dark',
-                    borderRadius:'1rem',
-                    textAlign:'center',
-                    fontWeight:300,
+                    color:'secondary.contrastText',
+                    fontWeight:500,
                     p:2,
                     m:'auto',
                     mb:2
                 }}>
-                    Funcionalidades
+                    Teste Nossas Ferramentas
                 </Typography>
 
-                <Box sx={{position:'relative'}}>
+                <Paper sx={{position:'relative', backgroundColor:'warning.contrastText'}}>
                     <Carousel/>
-                </Box>
+                </Paper>
                 {/*
                 <Box sx={{
                     display:'flex',

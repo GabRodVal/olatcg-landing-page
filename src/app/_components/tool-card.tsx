@@ -19,7 +19,7 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                 width:'60vw',
                 display:'block',
                 overflow:'hidden',
-                backgroundColor:'primary.light',
+                backgroundColor:'secondary.light',
                 borderRadius:'2rem',
                 m:2,
                 mr:4,
@@ -42,10 +42,11 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                     flexDirection:'column',
                     overflow:'hidden',
                     textOverflow:'ellipsis',
-                    backgroundColor:'primary.dark',
+                    backgroundColor:'secondary.dark',
                     borderRadius:'0 0 1.2rem 1.2rem',
-                    p:2,
-                    pt:1,
+                    p:4,
+                    pb:2,
+                    pt:2,
                     '@media (max-width: 768px)' : {
                         height:'6rem'
                     }
@@ -53,7 +54,7 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                     <Typography 
                         variant='h4'
                         sx={{
-                            backgroundColor:'primary.dark',
+                            backgroundColor:'secondary.dark',
                             color:'primary.contrastText',
                             fontWeight: 500,
                             p:1,
@@ -90,6 +91,7 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                             width: '20%',
                             mt:'auto',
                             ml:'auto',
+                            backgroundColor:'secondary.main',
                             '@media (max-width: 768px)' : {
                                 display:'none'
                             }

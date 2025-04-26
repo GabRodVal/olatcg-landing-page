@@ -31,21 +31,26 @@ export function DescriptionBody(){
                         priority
                     />
                 </Box>
-                <Paper elevation={3} sx={{
+                <Paper elevation={1} sx={{
+                    display:'flex',
+                    flexDirection:'column',
+                    justifyContent:'center',
+                    alignItems:'center',
                     textAlign:'center',
                     p:4,
-                    backgroundColor: 'primary.light',
+                    backgroundColor: 'primary.main',
                     color:'secondary.contrastText'
                 }}>
-                    <Typography variant='h5' sx={{fontWeight:500, mb:2}}>
-                        Um pouco mais sobre o projeto...
-                    </Typography>
-                    <Typography variant="body1" sx={{textAlign:'justify', wordWrap:'break-word', hyphens:'auto'}}>
-                        O OLATCG é uma plataforma didática que tem como propósito introduzir a Bioinformática através do uso dos principais modelos computacionais existentes na academia científica.
-                    </Typography>
-                    <Typography variant="body1" sx={{textAlign:'justify', wordWrap:'break-word', hyphens:'auto', '@media (max-width: 768px)':{display:'none'}}}>
-                        Nós desenvolvemos algumas ferramentas para tornar esta tarefa mais fácil, a partir de uma interface WEB você pode realizar e entender as principais noções envolvidas. Paralelamente a isso, em "sobre" você pode pesquisar sobre os pontos que você está aprendendo
-                    </Typography>
+                    <Box sx={{width:'90%'}}>
+                        <Typography variant='h4' sx={{fontWeight:500, mb:2, color:'primary.contrastText'}}>
+                            Um pouco mais sobre o projeto...
+                        </Typography>
+                        <Typography variant="body1" sx={{textAlign:'justify', wordWrap:'break-word', hyphens:'auto', color:'primary.contrastText'}}>
+                            O OLATCG é uma plataforma didática que tem como propósito introduzir a Bioinformática através do uso dos principais modelos computacionais existentes na academia científica.
+                            Nós desenvolvemos algumas ferramentas para tornar esta tarefa mais fácil, a partir de uma interface WEB você pode realizar e entender as principais noções envolvidas. Paralelamente a isso, em "sobre" você pode pesquisar sobre os pontos que você está aprendendo
+                        </Typography>
+                    
+                    </Box>
 
                     <Button
                         variant='contained'
