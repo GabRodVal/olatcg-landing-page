@@ -38,7 +38,7 @@ export function DescriptionBody(){
                     alignItems:'center',
                     textAlign:'center',
                     p:4,
-                    backgroundColor: 'primary.main',
+                    backgroundColor: 'secondary.dark',
                     color:'secondary.contrastText'
                 }}>
                     <Box sx={{width:'90%'}}>

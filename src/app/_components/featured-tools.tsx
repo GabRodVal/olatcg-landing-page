@@ -18,6 +18,7 @@ export function FeaturedTools(){
                 //filter:'blur(0.2rem)',
                 pt:2,
                 pb:1,
+                mb:-1,
                 '@media (max-width: 768px)' : {
                     p:0
                 }

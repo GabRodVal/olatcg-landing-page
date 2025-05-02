@@ -1,27 +1,71 @@
 'use client'
 
-import { Box, Button, Paper, Stepper, Step, StepConnector, StepIcon, StepLabel, StepContent, Typography } from '@mui/material';
+import { Box, Button, Divider, Paper, Stepper, Step, StepConnector, StepIcon, StepLabel, StepContent, Typography } from '@mui/material';
 import { Grading, Biotech, Mode } from '@mui/icons-material';
+import { StepIconProps } from '@mui/material';
 
-const steps = [
-    {
-        title:'Crie um experimento',
-        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        icon: Biotech,
-    },
-    {
-        title:'Monte sua análise',
-        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        icon: Mode,
+const CustomBiotechIcon = ({ active, error}: StepIconProps) => {
+    return (
+        <StepIcon
+            icon={
+                <Biotech
+                    sx={{
+                    fontSize:'4.8rem',
+                    borderRadius:'100%',
+                    backgroundColor: 'secondary.main',
+                    backgroundImage:'linear-gradient(to top, #37ecba 0%, #72afd3 100%)',
+                    color:'primary.contrastText',
+                    p:1,
+                    }}
+                />
+            }
+            active={active}
+            error={error}
+            />
+    )
+}
 
-    },
-    {
-        title:'Cheque os resultados',
-        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        icon: Grading,
+const CustomModeIcon = ({ active, error}: StepIconProps) => {
+    return (
+        <StepIcon
+            icon={
+                <Mode
+                    sx={{
+                    fontSize:'4.8rem',
+                    borderRadius:'100%',
+                    backgroundColor: 'secondary.main',
+                    backgroundImage:'linear-gradient(to top, #37ecba 0%, #72afd3 100%)',
+                    color:'primary.contrastText',
+                    p:1,
+                    }}
+                />
+            }
+            active={active}
+            error={error}
+            />
+    )
+}
 
-    },
-]
+const CustomGradingIcon = ({ active, error}: StepIconProps) => {
+    return (
+        <StepIcon
+            icon={
+                <Grading
+                    sx={{
+                    fontSize:'4.8rem',
+                    borderRadius:'100%',
+                    backgroundColor: 'secondary.main',
+                    backgroundImage:'linear-gradient(to top, #37ecba 0%, #72afd3 100%)',
+                    color:'primary.contrastText',
+                    p:1,
+                    }}
+                />
+            }
+            active={active}
+            error={error}
+            />
+    )
+}
 
 const CustomConnector = ({ index, active, completed, disabled}:any) => {
     return <StepConnector 
@@ -39,6 +83,26 @@ const CustomConnector = ({ index, active, completed, disabled}:any) => {
         }
     }}/>
 }
+
+const steps = [
+    {
+        title:'Crie um experimento',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon: CustomBiotechIcon,
+    },
+    {
+        title:'Monte sua análise',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon:CustomModeIcon,
+
+    },
+    {
+        title:'Cheque os resultados',
+        description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        icon: CustomGradingIcon,
+
+    },
+]
 
 export function Experiment(){
 
@@ -67,7 +131,8 @@ export function Experiment(){
                 sx={{
                     display:'flex',
                     m:4,
-                    minHeight:'33vh',
+                    mb:0,
+                    minHeight:'25vh',
                     alignItems:'center'
                 }}
             >
@@ -84,20 +149,7 @@ export function Experiment(){
                         <Step>
                             <StepLabel
                                 slots={{
-                                    stepIcon: item.icon
-                                }}
-                                slotProps={{
-                                    stepIcon:{
-                                        sx:{
-                                            fontSize:'4.8rem',
-                                            borderRadius:'100%',
-                                            backgroundColor: 'secondary.main',
-                                            backgroundImage:'linear-gradient(to top, #37ecba 0%, #72afd3 100%)',
-                                            color:'primary.contrastText',
-                                            p:1,
-                                        }
-                                    },
-                                    
+                                    stepIcon:item.icon
                                 }}
                             >
                                 <Box sx={{
@@ -105,10 +157,10 @@ export function Experiment(){
                                     flexDirection:'column',
                                     alignItems:'center',
                                     }}>
-                                    <Typography variant='body1' sx={{fontWeight:500, color:'secondary.contrastText'}}>
+                                    <Typography variant='body1' sx={{fontSize:'1.2rem', fontWeight:500, color:'secondary.contrastText'}}>
                                         {item.title} 
                                     </Typography>
-                                    <Typography variant='body2' sx={{color:'warning.contrastText'}}>
+                                    <Typography variant='body2' sx={{fontSize:'0.8rem', color:'warning.contrastText'}}>
                                         {item.description}
                                     </Typography>
                                 </Box>

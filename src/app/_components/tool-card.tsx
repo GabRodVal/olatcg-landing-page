@@ -47,6 +47,7 @@ export function ToolCard({focus, cardImage, title, description, buttonRedirect}:
                     p:4,
                     pb:2,
                     pt:2,
+                    m:-1,
                     '@media (max-width: 768px)' : {
                         height:'6rem'
                     }

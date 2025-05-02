@@ -19,7 +19,8 @@ export default function Home() {
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'primary.dark',
-        backgroundImage: 'linear-gradient(to top right, #43e97b 0%, #38f9d7 100%);'
+        backgroundImage: 'linear-gradient(to top right, #43e97b 0%, #38f9d7 100%)'
+        //backgroundImage: 'linear-gradient(to top left, #20E2D7 0%, #F9FEA5 100%)'
       }}>
         <Box sx={{
           '@media (max-width: 768px)' : {

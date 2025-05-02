@@ -50,7 +50,7 @@ export function OurTools(){
                 <Divider sx={{m:4}}orientation='vertical' variant='middle' flexItem/>
                 <List sx={{width:'50%'}}>
                     {tools.map((item,index) => (
-                        <ListItem key={index}>
+                        <ListItem key={index} sx={{mb:1}}>
                             <ListItemAvatar>
                                 <Avatar sx={{width:'4rem', height:'4rem', mr:2, backgroundColor:'secondary.dark'}}>
                                     <item.icon sx={{fontSize:'3.2rem'}}/>
