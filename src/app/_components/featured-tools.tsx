@@ -34,9 +34,9 @@ export function FeaturedTools(){
                     Teste Nossas Ferramentas
                 </Typography>
 
-                <Paper sx={{position:'relative', backgroundColor:'warning.contrastText'}}>
+                <Box sx={{position:'relative', backgroundColor:'warning.contrastText'}}>
                     <Carousel/>
-                </Paper>
+                </Box>
                 {/*
                 <Box sx={{
                     display:'flex',

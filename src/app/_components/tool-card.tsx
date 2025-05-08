@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Box, Button, Typography } from '@mui/material';
 import { ImageModal } from './image-modal';
 
-type CardProps = {
+type ToolCardProps = {
     focus:boolean;
     cardImage:any;
     title:string;
@@ -11,7 +11,7 @@ type CardProps = {
     buttonRedirect:string;
 }
 
-export function ToolCard({focus, cardImage, title, description, buttonRedirect}: CardProps){
+export function ToolCard({focus, cardImage, title, description, buttonRedirect}: ToolCardProps){
 
     return(
         <div>

@@ -7,7 +7,7 @@ import { Collab } from "./_components/collab";
 import { Learn } from './_components/learn';
 import { Experiment } from './_components/experiment';
 import { OurTools } from './_components/our-tools';
-
+import { TeamSection } from './_components/team-section';
 
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'primary.dark',
-        backgroundImage: 'linear-gradient(to top right, #43e97b 0%, #38f9d7 100%)'
+        backgroundImage: 'linear-gradient(to top right,rgb(47, 212, 102) 0%,rgb(32, 226, 191) 100%)'
         //backgroundImage: 'linear-gradient(to top left, #20E2D7 0%, #F9FEA5 100%)'
       }}>
         <Box sx={{
@@ -34,6 +34,7 @@ export default function Home() {
           <Experiment/>
           <Learn/>
           <OurTools/>
+          <TeamSection/>
           <FeaturedTools/>
         </Paper>
         <Collab/>

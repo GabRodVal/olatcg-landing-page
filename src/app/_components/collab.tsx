@@ -1,10 +1,13 @@
-import * as React from 'react';
+'use client';
+
 import Image from 'next/image';
+import { useTheme } from "@mui/material/styles";
 import { Box, Typography } from '@mui/material';
 import cefetLogo from '../../../public/cefet_logo.png'
 import fundOsorioLogo from '../../../public/logofo2024.png'
 
 export function Collab(){
+    const theme = useTheme();
 
     return(
         <div>
@@ -16,7 +19,17 @@ export function Collab(){
                     width:'100%'
                 }
             }}>
-                <Typography variant='h4' sx={{fontWeight:400, p:2, mt:4}}>O OLATCG é uma colaboração entre</Typography>
+                <Typography 
+                    variant='h4' 
+                    sx={{
+                        fontWeight:400,
+                        p:2,
+                        mt:4,
+                        textShadow: `0.1rem 0.1rem 0px ${theme.palette.primary.main}`
+                        }}
+                >
+                    O OLATCG é uma colaboração entre
+                </Typography>
                 <Box sx={{
                     display: 'flex',
                     justifyContent:'center',

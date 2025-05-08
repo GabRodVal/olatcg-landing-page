@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import Image from 'next/image';
 import { useTheme } from "@mui/material/styles";
 import { Box, Button, Tooltip, Typography } from '@mui/material';
